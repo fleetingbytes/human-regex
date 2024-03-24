@@ -1,4 +1,4 @@
-from human_regex.string_regex import String_Regex as Sre
+from human_regex import String_Regex as Sre
 
 
 def test_string_regex():
