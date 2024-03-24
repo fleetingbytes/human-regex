@@ -5,9 +5,9 @@ class Abstract_Regex(ABC):
     @classmethod
     @property
     @abstractmethod
-    def JOINER(cls):
+    def CONCATENATOR(cls):
         ...
 
     @abstractmethod
-    def join(self):
+    def append(self):
         ...

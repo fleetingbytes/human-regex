@@ -1,7 +1,7 @@
-from human_regex.string_regex import String_Regex as SR
+from human_regex.string_regex import String_Regex as Sre
 
 
 def test_string_regex():
-    s = SR("hi")
-    t = s.join(" ", "there")
-    assert str(t) == "hi there"
+    s = Sre("hi")
+    t = s.append(" ", "there")
+    assert t == "hi there"

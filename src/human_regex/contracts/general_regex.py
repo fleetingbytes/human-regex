@@ -6,9 +6,8 @@ class General_Regex_Base(Abstract_Regex):
     @classmethod
     @property
     @abstractmethod
-    def JOINER(cls):
+    def CONCATENATOR(cls):
         ...
 
-    @abstractmethod
-    def join(self, *args, **kwargs):
-        ...
+    def append(self, *args, **kwargs):
+        return type(self)(self.CONCATENATOR.join((self, *args), **kwargs))
