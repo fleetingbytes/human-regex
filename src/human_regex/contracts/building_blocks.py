@@ -11,4 +11,4 @@ def create_property(constant, encoding):
     return func
 
 
-primitives = dict((("CONCATENATOR", ""),))
+building_blocks = dict((("CONCATENATOR", ""),))

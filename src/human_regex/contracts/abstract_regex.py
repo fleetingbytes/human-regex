@@ -9,5 +9,9 @@ class Abstract_Regex(ABC):
         ...
 
     @abstractmethod
+    def __add__(self):
+        ...
+
+    @abstractmethod
     def append(self):
         ...
