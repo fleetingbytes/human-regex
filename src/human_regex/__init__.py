@@ -1,18 +1,18 @@
-from .contracts.general_regex import General_Regex_Base
-from .contracts.building_blocks import create_property, building_blocks
+from .bases import GeneralRegexBase, ReProxy
+from .utilities import building_blocks, create_class_property
 
-# Classes String_Regex and Bytes_Regex are very similar.
-# Bytes_Regex has a base class bytes rather than str
-# and class properties made of building blocks
-# which are encoded in UTF-8.
+# Classes StringRegex and BytesRegex are very similar.
+# BytesRegex has a base class bytes rather than str
+# and has class properties made of building blocks
+# which are encoded in UTF-8, rather than Unicode strings.
 #
-# Hence we generate these classes dynamically:
+# Hence we generate the classes StringRegex and BytesRegex dynamically:
 for class_name, str_or_bytes, encoding in (
-    ("String_Regex", str, ""),
-    ("Bytes_Regex", bytes, "utf-8"),
+    ("StringRegex", str, ""),
+    ("BytesRegex", bytes, "utf-8"),
 ):
     globals()[class_name] = type(
         class_name,
-        (str_or_bytes, General_Regex_Base),
-        {k: create_property(v, encoding=encoding) for k, v in building_blocks.items()},
+        (GeneralRegexBase, ReProxy, str_or_bytes),
+        {k: create_class_property(v, encoding=encoding) for k, v in building_blocks.items()},
     )

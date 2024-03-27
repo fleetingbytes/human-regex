@@ -23,7 +23,9 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = [
+  "requests",
+]
 
 [project.urls]
 Documentation = "https://github.com/fleetingbytes/human-regex/#readme"
@@ -124,6 +126,10 @@ ignore = [
   "S105", "S106", "S107",
   # Ignore complexity
   "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915",
+  # Ignore relative imports
+  "TID252",
+  # Ignore function names in capital letters
+  "N802",
 ]
 unfixable = [
   # Don't touch unused imports
