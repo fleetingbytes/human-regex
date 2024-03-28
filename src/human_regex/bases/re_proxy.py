@@ -23,20 +23,20 @@ re_flags = {
 
 re_proxy_class_dict = {k: create_class_property(v, encoding=None) for k, v in re_flags.items()}
 
-re_functions = {
-    "compile": re.compile,
-    "search": re.search,
-    "match": re.match,
-    "fullmatch": re.fullmatch,
-    "split": re.split,
-    "findall": re.findall,
-    "finditer": re.finditer,
-    "sub": re.sub,
-    "subn": re.subn,
-    "escape": re.escape,
-    "purge": re.purge,
-}
+re_functions = [
+    re.compile,
+    re.search,
+    re.match,
+    re.fullmatch,
+    re.split,
+    re.findall,
+    re.finditer,
+    re.sub,
+    re.subn,
+    re.escape,
+    re.purge,
+]
 
-re_proxy_class_dict.update({k: make_re_proxy_function(k, v) for k, v in re_functions.items()})
+re_proxy_class_dict.update({f.__name__: make_re_proxy_function(f) for f in re_functions})
 
 ReProxy = type("ReProxy", (), re_proxy_class_dict)

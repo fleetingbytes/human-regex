@@ -80,6 +80,15 @@ all = [
   "typing",
 ]
 
+[tool.hatch.envs.docs]
+dependencies = [
+  "pdoc",
+]
+[tool.hatch.envs.docs.scripts]
+build = "pdoc --output-directory ./api-docs src/human_regex"
+serve = "pdoc src/human_regex"
+book = "mdbook serve --open documentation"
+
 [tool.black]
 target-version = ["py311"]
 line-length = 120

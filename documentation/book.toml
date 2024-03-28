@@ -1,0 +1,6 @@
+[book]
+authors = ["Sven Siegmund"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Human Regex"
