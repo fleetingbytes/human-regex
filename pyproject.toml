@@ -79,6 +79,15 @@ all = [
   "typing",
 ]
 
+[tool.hatch.envs.tc]
+dependencies = [
+  "towncrier",
+]
+
+[tool.hatch.envs.tc.scripts]
+draft = "towncrier build --draft"
+build = "towncrier build --yes"
+
 [tool.hatch.envs.docs]
 dependencies = [
   "pdoc",
