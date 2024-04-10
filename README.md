@@ -146,6 +146,6 @@ b = Bre.concatenate(map(lambda i: str.encode(chr(i)), some_integers))
 
 ## Links
 
-[Repository](https://github.com/fleetingbytes/human-regex)
-[Documentation](https://fleetingbytes.github.io/human-regex/human_regex.html)
+- [Repository](https://github.com/fleetingbytes/human-regex)
+- [Documentation](https://fleetingbytes.github.io/human-regex/human_regex.html)
 
