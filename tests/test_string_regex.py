@@ -1,5 +1,6 @@
-from human_regex import StringRegex as Sre
 import re
+
+from human_regex import StringRegex as Sre
 
 
 def test_string_concatenate():
@@ -61,8 +62,8 @@ def test_string_no_capture():
 
 
 def test_string_modify_flags():
-    s = Sre("start").modify_flags("aiLmsux").append("end")
-    assert s == "start(?aiLmsux)end"
+    s = Sre("content").modify_flags("aiLmsux-imsx")
+    assert s == "(?aiLmsux-imsx:content)"
     assert type(s) is Sre
 
 
@@ -165,9 +166,6 @@ def test_string_lazy():
 
 
 def test_string_repeat():
-    s = Sre("a").repeat(2)
-    assert s == "a{2,}"
-    assert type(s) is Sre
     t = Sre("a").repeat(2, 3)
     assert t == "a{2,3}"
     assert type(t) is Sre
@@ -177,12 +175,18 @@ def test_string_repeat():
     v = Sre("a").repeat(2, None)
     assert v == "a{2,}"
     assert type(v) is Sre
-    w = Sre("a").repeat(None)
-    assert w == "a{,}"
-    assert type(w) is Sre
     x = Sre("a").repeat(None, None)
     assert x == "a{,}"
     assert type(x) is Sre
+
+
+def test_string_exactly():
+    s = Sre("a").exactly(2)
+    assert s == "a{2}"
+    assert type(s) is Sre
+    t = Sre("a").exactly(None)
+    assert t == "a{}"
+    assert type(t) is Sre
 
 
 def test_string_compile():

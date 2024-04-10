@@ -1,5 +1,11 @@
+"""
+.. include:: ../../README.md
+"""
+
 from .bases import GeneralRegexBase, ReProxy
 from .utilities import building_blocks, create_class_property
+
+__all__ = ["StringRegex", "BytesRegex"]
 
 # Classes StringRegex and BytesRegex are very similar.
 # BytesRegex has a base class bytes rather than str

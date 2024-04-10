@@ -1,5 +1,6 @@
-from human_regex import BytesRegex as Bre
 import re
+
+from human_regex import BytesRegex as Bre
 
 
 def test_bytes_concatenate():
@@ -67,8 +68,8 @@ def test_string_atomic():
 
 
 def test_bytes_modify_flags():
-    b = Bre(b"start").modify_flags(b"aiLmsux").append(b"end")
-    assert b == b"start(?aiLmsux)end"
+    b = Bre(b"content").modify_flags(b"aiLmsux-imsx")
+    assert b == b"(?aiLmsux-imsx:content)"
     assert type(b) is Bre
 
 
@@ -165,9 +166,6 @@ def test_bytes_lazy():
 
 
 def test_bytes_repeat():
-    b = Bre(b"a").repeat(2)
-    assert b == b"a{2,}"
-    assert type(b) is Bre
     c = Bre(b"a").repeat(2, 3)
     assert c == b"a{2,3}"
     assert type(c) is Bre
@@ -177,12 +175,18 @@ def test_bytes_repeat():
     e = Bre(b"a").repeat(2, None)
     assert e == b"a{2,}"
     assert type(e) is Bre
-    f = Bre(b"a").repeat(None)
-    assert f == b"a{,}"
-    assert type(f) is Bre
     g = Bre(b"a").repeat(None, None)
     assert g == b"a{,}"
     assert type(g) is Bre
+
+
+def test_bytes_exactly():
+    b = Bre(b"a").exactly(2)
+    assert b == b"a{2}"
+    assert type(b) is Bre
+    c = Bre(b"a").exactly(None)
+    assert c == b"a{}"
+    assert type(c) is Bre
 
 
 def test_bytes_compile():

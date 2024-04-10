@@ -24,7 +24,6 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "requests",
 ]
 
 [project.urls]
@@ -86,8 +85,7 @@ dependencies = [
 ]
 [tool.hatch.envs.docs.scripts]
 build = "pdoc --output-directory ./api-docs src/human_regex"
-serve = "pdoc src/human_regex"
-book = "mdbook serve --open documentation"
+serve = "pdoc human_regex human_regex.bases.general_regex"
 
 [tool.black]
 target-version = ["py311"]
