@@ -143,3 +143,9 @@ b = Bre.concatenate(map(lambda i: str.encode(chr(i)), some_integers))
 ## Inherited Methods and Properties
 
 `StringRegex` and `BytesRegex` differ slightly in their private class variables, but their public methods and properties have all been inherited from the `human_regex.bases.general_regex.GeneralRegexBase` class. Thus, the documentation of the `StringRegex` or `BytesRegex`'s inherited public methods and properties is to be looked up there. For methods proxied from the built-in [re](https://docs.python.org/library/re.html) module or inherited from `str`, or `bytes`, look in the Python's standard library documentation.
+
+## Links
+
+[Repository](https://github.com/fleetingbytes/human-regex)
+[Documentation](https://fleetingbytes.github.io/human-regex/human_regex.html)
+
