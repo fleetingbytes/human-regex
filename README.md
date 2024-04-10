@@ -1,8 +1,8 @@
 ## Overview
 
-Regular expressions for humans. 
+Regular expressions for humans.
 
-Human-regex provides the classes `StringRegex` and `BytesRegex` which are subclasses of `str` or `bytes`, respectively. They contain methods and properties which can produce your regular expressions in *readable code*.
+Human-regex provides the classes `StringRegex` and `BytesRegex` which are subclasses of `str` or `bytes`, respectively. They contain methods and properties which can produce your regular expressions with *readable code*.
 
 ```py
 from human_regex import StringRegex as Sre
