@@ -2,6 +2,7 @@
 .. include:: ../../README.md
 """
 
+from .__about__ import __version__  # noqa: F401
 from .bases import GeneralRegexBase, ReProxy
 from .utilities import building_blocks, create_class_property
 
