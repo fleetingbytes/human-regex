@@ -42,10 +42,10 @@ building_blocks = {
 }
 
 
-def make_re_proxy_function(name, func):
+def make_re_proxy_function(func):
     def proxied(self, *args, **kwargs):
         result = func(self, *args, **kwargs)
         return result
 
-    proxied.__doc__ = f"Proxy for re.{name}\n" + func.__doc__
+    proxied.__doc__ = f"Proxy for re.{func.__name__}\n" + func.__doc__
     return proxied
