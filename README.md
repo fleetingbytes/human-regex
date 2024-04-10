@@ -2,7 +2,7 @@
 
 Regular expressions for humans.
 
-Human-regex provides the classes `StringRegex` and `BytesRegex` which are subclasses of `str` or `bytes`, respectively. They contain methods and properties which can produce your regular expressions with *readable code*.
+The [human-regex](https://github.com/fleetingbytes/human-regex) package provides the classes `StringRegex` and `BytesRegex` which are subclasses of `str` or `bytes`, respectively. They contain methods and properties which can produce your regular expressions with *readable code*.
 
 ```py
 from human_regex import StringRegex as Sre
@@ -35,6 +35,9 @@ assert word_endswith_c == r"\b(?P<ends_with_c>\w*c)\b"
 word_startswith_a = word.prepend("a").named("starts_with_a").prepend(r"\b").append(r"\b")
 assert word_startswith_a == r"\b(?P<starts_with_a>a\w*)\b"
 ```
+
+- [Full Documentation](https://fleetingbytes.github.io/human-regex/human_regex.html)
+
 
 ## Subclasses of `str`, `bytes`
 
@@ -143,9 +146,3 @@ b = Bre.concatenate(map(lambda i: str.encode(chr(i)), some_integers))
 ## Inherited Methods and Properties
 
 `StringRegex` and `BytesRegex` differ slightly in their private class variables, but their public methods and properties have all been inherited from the `human_regex.bases.general_regex.GeneralRegexBase` class. Thus, the documentation of the `StringRegex` or `BytesRegex`'s inherited public methods and properties is to be looked up there. For methods proxied from the built-in [re](https://docs.python.org/library/re.html) module or inherited from `str`, or `bytes`, look in the Python's standard library documentation.
-
-## Links
-
-- [Repository](https://github.com/fleetingbytes/human-regex)
-- [Documentation](https://fleetingbytes.github.io/human-regex/human_regex.html)
-
