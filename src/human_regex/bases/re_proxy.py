@@ -1,6 +1,6 @@
 import re
-from ..utilities import create_class_property, make_re_proxy_function
 
+from ..utilities import create_class_property, make_re_proxy_function
 
 re_flags = {
     "A": re.A,
@@ -38,5 +38,6 @@ re_functions = [
 ]
 
 re_proxy_class_dict.update({f.__name__: make_re_proxy_function(f) for f in re_functions})
+re_proxy_class_dict.update({"RegexFlag": re.RegexFlag})
 
 ReProxy = type("ReProxy", (), re_proxy_class_dict)
