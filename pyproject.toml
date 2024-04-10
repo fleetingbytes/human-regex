@@ -17,7 +17,7 @@ authors = [
   { name = "Sven Siegmund", email = "sven.siegmund@gmail.com" },
 ]
 classifiers = [
-  "Development Status :: 4 - Beta",
+  "Development Status :: 5 - Production/Stable",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
@@ -27,7 +27,7 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/fleetingbytes/human-regex/#readme"
+Documentation = "https://fleetingbytes.github.io/human-regex/human_regex.html"
 Issues = "https://github.com/fleetingbytes/human-regex/issues"
 Source = "https://github.com/fleetingbytes/human-regex"
 
